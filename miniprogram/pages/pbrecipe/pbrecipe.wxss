@@ -1,0 +1,19 @@
+/* pages/pbrecipe/pbrecipe.wxss */
+/* pages/pbmenu/pbmenu.wxss */
+page{
+  background-color: #f9f9f9;
+}
+.weui-cells__title{
+  font-size: 32rpx;
+  color: #eb9b42;
+
+}
+.weui-input{
+  font-size: 14px;
+}
+radio{
+  margin:10rpx 28rpx;
+}
+.weui-btn{
+  margin-top: 20rpx;
+}

@@ -1,0 +1,124 @@
+<view>
+  <!-- 顶部用户信息 -->
+  <view class="header">
+    <!-- 未登录页面 -->
+    <view class="no-login" wx:if="{{ !isLogin }}">
+      <image src="../../static/my/logo1.jpg"></image>
+      <button size="mini" plain="{{ true }}" open-type="getUserInfo" bindgetuserinfo="_doLogin">登录</button>
+    </view>
+    <!-- 登录页面 -->
+    <view class="login" wx:else>
+      <image src="{{userInfo.avatarUrl}}" bindtap="_goCate"></image>
+      <view class="name">
+        {{userInfo.nickName}}
+      </view>
+    </view>
+  </view>
+
+  <!-- 导航栏 -->
+  <view class="menu">
+    <view class="{{currentIndex === '0'?'active':''}}" bindtap="_checkActive" data-index="0">菜单</view>
+    <view class="{{currentIndex === '1'?'active':''}}" bindtap="_checkActive" data-index="1">关注</view>
+  </view>
+
+  <!-- 内容显示 -->
+  <!-- 未登录时 -->
+  <view class="body-nologin" wx:if="{{ !isLogin }}">
+    <view class="content-body-nologin">
+      <image src="../../static/my/nologin.jpg"></image>
+      <view>可以先去登录哦</view>
+    </view>
+  </view>
+  <!-- 登录之后 -->
+  <view wx:else>
+    <!-- 菜单列表 -->
+    <view>
+      <!-- 菜单列表 -->
+      <view>
+        <!-- 没有东西 -->
+        <view wx:if="{{ recipes.length <= 0 }}" class="no-pbmenu">
+          <image src="../../static/my/img01.jpg"></image>
+          <view>您还没发布过菜单哦</view>
+        </view>
+        <!-- 有东西 -->
+        <view class="hot-recipe-list" wx:else>
+          <block wx:for="{{ recipes }}" wx:key="id">
+            <view class="hot-recipe-list-item" bindlongpress="_delStyle" data-index="{{ index }}">
+              <!-- 内容区域 -->
+              <view>
+                <!-- 图片 -->
+                <image src="{{ item.filesID[0] }}"></image>
+                <!-- 名字 -->
+                <view class="hot-recipe-list-item-title">{{ item.recipeName }}</view>
+                <!-- 发布人及浏览次数 -->
+                <view class="hot-recipe-list-item-info">
+                  <view class="left">
+                    <image src="{{userInfo.avatarUrl}}"></image>
+                    <text>{{userInfo.nickName}}</text>
+                  </view>
+                  <view class="right">
+                    <image src="../../imgs/airs.png"></image>
+                    <text>{{item.views}}</text>
+                  </view>
+                </view>
+              </view>
+
+              <!-- 遮罩层区域 -->
+              <view class="cover" style="opacity: {{ item.opacity }};">
+                <mp-icon bindtap="_doDelete" data-index="{{ index }}" size="30" color="#fff" icon="delete"></mp-icon>
+              </view>
+
+            </view>
+
+          </block>
+        </view>
+      </view>
+      <!-- 加号 -->
+      <view class="jia" bindtap="_goPbrecipe">
+        <image src="../../static/my/jia.png"></image>
+      </view>
+    </view>
+
+    <!-- 关注列表 -->
+    <view style="display:none">
+      <!-- 没有关注 -->
+      <view class="no-follow" wx:if="{{ lists.length <=0 }}">
+        <image src="../../static/my/nofollow.jpg"></image>
+        <view>您还没关注哦</view>
+      </view>
+      <!-- 关注菜单 -->
+      <view wx:else>
+        <block wx:for="{{ lists }}">
+          <view class="list">
+            <image src="{{ item.src }}" class="recipe-image"></image>
+            <!-- 基本信息 -->
+            <view class="list-info">
+              <view class="list-name">{{ item.name }}</view>
+              <view class="list-info-userinfo">
+                <image src="{{ item.userInfo.pic }}"></image>
+                <text>{{ item.userInfo.nickName }}</text>
+              </view>
+              <view class="xing">
+                <!-- 星星 -->
+                <image src="../../static/list/xing3.png"></image>
+              </view>
+              <view class="number">
+                <view>
+                  <image src="../../static/list/followed.png"></image>
+                  <text>{{ item.follow }}</text>
+                </view>
+                <view>
+                  <image src="../../static/list/airs.png"></image>
+                  <text>{{ item.views }}</text>
+                </view>
+              </view>
+            </view>
+          </view>
+        </block>
+      </view>
+    </view>
+
+  </view>
+
+
+</view>

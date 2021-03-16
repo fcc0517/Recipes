@@ -1,0 +1,68 @@
+/* pages/list/list.wxss */
+page{
+  background-color: #f9f8f7;
+}
+
+.list{
+  background-color: #fff;
+  width: 708rpx;
+  height: 280rpx;
+  margin: 28rpx 22rpx;
+  border-radius: 20rpx;
+}
+
+.recipe-image{
+  width: 320rpx;
+  height: 280rpx;
+  border-bottom-left-radius: 20rpx;
+  border-top-left-radius: 20rpx;
+}
+.list-info{
+  width: 388rpx;
+  height: 280rpx;
+  padding: 35rpx;
+}
+.list{
+  display: flex;
+  
+}
+
+.list-info-userinfo image{
+  width: 34rpx;
+  height: 34rpx;
+  margin-right: 20rpx;
+}
+.xing image{
+  width: 180rpx;
+  height: 30rpx;
+}
+
+.number  image{
+  width: 40rpx;
+  height: 30rpx;
+  margin-right: 10rpx;
+}
+.list-name{
+  font-size: 18px;
+  font-weight: 300;
+}
+.list-info-userinfo{
+  margin-top: 40rpx;
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+}
+
+.xing{
+  margin-top: 20rpx;
+}
+.number{
+  display: flex;
+  margin-top: 10rpx;
+}
+.number view {
+  margin-right: 70rpx;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+}

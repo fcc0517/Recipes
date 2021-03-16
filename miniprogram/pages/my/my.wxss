@@ -1,0 +1,281 @@
+/* pages/my/my.wxss */
+page{
+  background-color: #f9f9f9;
+}
+.header{
+  height: 380rpx;
+  width: 100%;
+  background-color: #ea932a;
+}
+.no-login image,.login  image{
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 50%;
+  margin-top: 60rpx;
+}
+.no-login,.login{
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+  height: 100%;
+}
+.no-login button{
+  /* width: 130rpx;
+  height: 50rpx; */
+  font-size: 14px;
+  padding: 0px 30rpx;
+  border: 2px solid #fff;
+  color:#fff;
+  margin-top: 20rpx;
+}
+
+.login .name{
+  color: #fff;
+  margin-top: 20rpx;
+}
+
+.menu{
+  height: 100rpx;
+  width: 100%;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.menu view{
+  height: 100%;
+  border-bottom: 2px solid #fff;
+  flex: 1;
+  line-height: 100rpx;
+  text-align: center;
+}
+.menu .active{
+  border-bottom:2px solid #ea932a ;
+  color: #ea932a;
+  font-size: 18px;
+}
+
+.body-nologin  image,.no-pbmenu  image{
+  width: 180rpx;
+  height: 160rpx;
+  margin-bottom: 20rpx;
+}
+.body-nologin { 
+  display: flex;
+  justify-content: center;
+  color: #c1c1c1;
+  margin-top: 190rpx;
+  
+}
+.content-body-nologin,.no-pbmenu{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.jia image{
+  width: 100rpx;
+  height: 100rpx;
+}
+
+.jia{
+  position: fixed;
+  right: 80rpx;
+  bottom: 45rpx;
+}
+
+.no-pbmenu{
+  margin-top: 200rpx;
+  color: #c1c1c1;
+}
+
+.hot-recipe-list{
+  background-color: #f9f8f7;
+  padding: 0rpx 40rpx;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+/* 菜谱列表 */
+.hot-recipe-list-item{
+  width: 320rpx;
+  height: 448rpx;
+  background-color: #fff;
+  margin-top: 26rpx;
+  border-top-left-radius: 20rpx;
+  border-top-right-radius: 20rpx;   
+
+  /* 加遮罩层操作 */
+  position: relative;
+}
+
+/* 遮罩层 */
+.cover{
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 320rpx;
+   height: 448rpx;
+   border-top-left-radius: 20rpx;
+   border-top-right-radius: 20rpx;   
+   background-color: rgba(0, 0, 0, 0.6);
+   text-align: center;
+   line-height: 448rpx;
+   transition: opacity 1s;
+}
+
+
+.hot-recipe-list-item image{
+  width: 100%;
+  height: 330rpx;
+  border-top-left-radius: 20rpx;
+  border-top-right-radius: 20rpx;  
+}
+.hot-recipe-list-item-title{
+  height: 70rpx;
+  width: 100%;
+  font-size: 16px;
+  line-height: 70rpx;
+  padding-left: 18rpx;
+}
+.hot-recipe-list-item-info{
+  display: flex;
+  padding: 0px  18rpx;
+  justify-content: space-between;
+  align-items: center;
+  color: #bdbdbd;
+}
+.hot-recipe-list-item-info .left{
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+}
+.hot-recipe-list-item-info .right{
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+}
+
+.hot-recipe-list-item-info .left image{
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.hot-recipe-list-item-info .right image{
+  width: 27rpx;
+  height: 16rpx;
+}
+
+.type-list{
+  margin-top: 40rpx;
+}
+
+.list-item{
+  background-color: #fff;
+  margin-bottom: 30rpx;
+  width: 100%;
+  height: 85rpx;
+  display: flex;
+  align-items: center;
+}
+
+.type-list image{
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 44rpx;
+}
+.type-list view{
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+  color: #58585c;
+}
+
+.list-item{
+  padding: 0px 44rpx;
+}
+.onlyimage{
+  margin-top: 10rpx;
+  margin-left: 425rpx;
+}
+
+.no-follow image{
+  width: 115rpx;
+  height: 115rpx;
+  margin-top: 230rpx;
+  margin-bottom: 30rpx;
+}
+.no-follow{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #c1c1c1;
+}
+
+.list{
+  background-color: #fff;
+  width: 708rpx;
+  height: 280rpx;
+  margin: 28rpx 22rpx;
+  border-radius: 20rpx;
+}
+
+.recipe-image{
+  width: 320rpx;
+  height: 280rpx;
+  border-bottom-left-radius: 20rpx;
+  border-top-left-radius: 20rpx;
+}
+.list-info{
+  width: 388rpx;
+  height: 280rpx;
+  padding: 35rpx;
+}
+.list{
+  display: flex;
+  
+}
+
+.list-info-userinfo image{
+  width: 34rpx;
+  height: 34rpx;
+  margin-right: 20rpx;
+}
+.xing image{
+  width: 180rpx;
+  height: 30rpx;
+}
+
+.number  image{
+  width: 40rpx;
+  height: 30rpx;
+  margin-right: 10rpx;
+}
+.list-name{
+  font-size: 18px;
+  font-weight: 300;
+}
+.list-info-userinfo{
+  margin-top: 40rpx;
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+}
+
+.xing{
+  margin-top: 20rpx;
+}
+.number{
+  display: flex;
+  margin-top: 10rpx;
+}
+.number view {
+  margin-right: 70rpx;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+}
+

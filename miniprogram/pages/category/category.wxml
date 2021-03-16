@@ -1,0 +1,33 @@
+<view class='adminPerson' >
+	<!-- 菜谱分类列表 (菜谱分类列表) -->
+	<view class='cpfllb' wx:if="{{isShow}}">
+		<view wx:for="{{typeAllList}}">
+			<text class="txt">{{item.typeName}}</text>
+			<text class="btn" style="background:#f1613c" bindtap="_del" data-id="{{item._id}}">删除</text>
+			<text class="btn" style="background:#4578ff"  bindtap="_set" data-index="{{index}}">修改</text>
+    </view>
+		</view>
+
+		<view wx:else>当前没有分类</view>
+	<!--    页面 （菜谱添加分类） -->
+	<view class='cptjfl'>
+
+		<mp-cell prop="mobile" ext-class=" weui-cell_vcode">
+			<!-- 输入菜谱分类 -->
+			<input class="weui-input" model:value="{{inValue}}"   placeholder="输入菜谱分类"  bindinput="_inputValue" />
+			<view slot="footer" class="weui-vcode-btn" bindtap="_add">添加</view>
+		</mp-cell>
+	</view>
+	<!-- 修改页面  （菜谱修改分类）-->
+	<view class='cpxgfl'>
+
+		<mp-cell prop="mobile" ext-class=" weui-cell_vcode">
+			<!-- 输入菜谱分类 -->
+			<input  model:value="{{setValue}}" class="weui-input" placeholder="输入菜谱分类" />
+			<view slot="footer" class="weui-vcode-btn" bindtap="_update">修改</view>
+		</mp-cell>
+
+	</view>
+
+</view>
+

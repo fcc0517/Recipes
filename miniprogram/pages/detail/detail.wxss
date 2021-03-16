@@ -1,0 +1,110 @@
+/* pages/detail/detail.wxss */
+.swiper{
+  width: 100%;
+  height: 430rpx;
+}
+.swiper image{
+  width: 100%;
+  height: 100%;
+}
+.info{
+  height: 94rpx;
+  width: 100%;
+  background-color: #fff;
+  padding: 33rpx 30rpx;
+}
+.info-top{
+  color: #ea932a;
+  padding-bottom: 20rpx;
+  font-size: 18px;
+}
+
+.left  image{
+  width: 28rpx;
+  height: 28rpx;
+}
+.center image{
+  width: 26rpx;
+  height: 26rpx;
+}
+.right image{
+  width: 26rpx;
+  height: 20rpx;
+}
+.info-bottom{
+  display: flex;
+}
+
+.info-bottom view{
+  margin-right: 80rpx;
+}
+.left{
+  font-size: 16px;
+}
+
+.center{
+  font-size: 14px;
+}
+.right{
+  font-size: 12px;
+}
+
+.makes{
+  padding: 30rpx;
+}
+.makes-title{
+  height: 50rpx;
+  font-size: 18px;
+  color: #ea932a;
+  margin-bottom: 10rpx;
+}
+.makes-content{
+  color: #cecece;
+}
+.makes-content view{
+  margin-top: 15rpx;
+}
+
+.set-follow image{
+  width: 42rpx;
+  height: 42rpx;
+  margin-right: 10rpx;
+}
+.bottom-set{
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100rpx;
+  border-top: 2px solid #eee;
+  display: flex;
+  align-items: center;
+}
+
+.set-follow{
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.set-concat{
+  flex: 1;
+  width: 100%;
+  height: 100%;
+}
+.set-follow  view{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ 
+}
+
+.set-concat  button{
+  width: 100%;
+  height: 100%;
+  background-color: #ea932a;
+  font-size: 15px;
+  color: #fff;
+  line-height: 75rpx;
+}

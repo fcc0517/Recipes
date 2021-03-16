@@ -1,0 +1,52 @@
+<view>
+    <!-- 顶部图片 -->
+    <view class="top-image">
+        <image src="../../imgs/index_02.jpg"></image>
+    </view>
+    <!-- 类别名称 -->
+    <scroll-view scroll-x="true">
+        <view class="top-type">
+        <view class="top-type-title" bindtap="_goTypePage">
+            <image src="../../imgs/index_05.jpg"></image>
+            <text>菜谱分类</text>
+        </view>
+        <block wx:for="{{ types }}">
+            <view class="top-type-title" bindtap="_goListPage" data-typeid="{{item._id}}" data-title="{{item.typeName}}" data-tag="putong">
+                <image src="../../imgs/index_11.jpg"></image>
+                <text>{{ item.typeName }}</text>
+            </view>
+        </block>
+    </view>
+    </scroll-view>
+
+    <!-- 热门菜谱 -->
+    <view class="hot-recipe">
+        <view class="hot-recipe-title"  bindtap="_goListPage" data-title="热门菜谱" data-typeid="null" data-tag="hot">
+            <image src="../../imgs/index_18.jpg"></image>
+            <text>热门菜谱</text>
+        </view>
+        <!-- 菜谱列表 -->
+        <view class="hot-recipe-list">
+            <block wx:for="{{ recipes }}">
+                <view class="hot-recipe-list-item">
+                    <!-- 图片 -->
+                    <image src="{{ item.filesID[0]}}" bindtap="_goDetailPage" data-id="{{item._id}}" data-title="{{item.recipeName}}"></image>
+                    <!-- 名字 -->
+                    <view class="hot-recipe-list-item-title">{{ item.recipeName }}</view>
+                    <!-- 发布人及浏览次数 -->
+                    <view class="hot-recipe-list-item-info">
+                        <view class="left">
+                            <image src="{{item.userInfo.avatarUrl}}"></image>
+                            <text>{{item.userInfo.nickName}}</text>
+                        </view>
+                        <view class="right">
+                            <image src="../../imgs/airs.png"></image>
+                            <text>{{item.views}}</text>
+                        </view>
+                    </view>
+                </view>
+            </block>
+
+        </view>
+    </view>
+</view>
